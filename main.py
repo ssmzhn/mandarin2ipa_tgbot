@@ -40,7 +40,7 @@ async def get_ipa(inline_query: InlineQuery):
             InlineQueryResultArticle(
                 id=result_id,
                 title=y,
-                input_message_content=InputTextMessageContent(ipa.converted2string(text, mode=x)),
+                input_message_content=InputTextMessageContent(y+":\n"+ipa.converted2string(text, mode=x)),
             )
         )
     await bot.answer_inline_query(inline_query.id, results=items, cache_time=1)
